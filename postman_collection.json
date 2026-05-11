@@ -1,0 +1,449 @@
+{
+  "info": {
+    "name": "Email Engagement System API",
+    "description": "Comprehensive API collection for the Email Engagement & Activity Distribution System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000/api",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Accounts",
+      "item": [
+        {
+          "name": "Create Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"alice@example.com\",\n  \"name\": \"Alice Johnson\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/accounts",
+              "host": ["{{base_url}}"],
+              "path": ["accounts"]
+            },
+            "description": "Creates a new email account with initial daily limit"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Accounts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accounts",
+              "host": ["{{base_url}}"],
+              "path": ["accounts"]
+            },
+            "description": "Retrieves all accounts in the system"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Account Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accounts/:id",
+              "host": ["{{base_url}}"],
+              "path": ["accounts", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "account-id-here"
+                }
+              ]
+            },
+            "description": "Retrieves details of a specific account"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Account Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accounts/:id/statistics",
+              "host": ["{{base_url}}"],
+              "path": ["accounts", ":id", "statistics"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "account-id-here"
+                }
+              ]
+            },
+            "description": "Retrieves comprehensive statistics for an account"
+          },
+          "response": []
+        },
+        {
+          "name": "Enable Account",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accounts/:id/enable",
+              "host": ["{{base_url}}"],
+              "path": ["accounts", ":id", "enable"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "account-id-here"
+                }
+              ]
+            },
+            "description": "Enables an account for activity"
+          },
+          "response": []
+        },
+        {
+          "name": "Disable Account",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accounts/:id/disable",
+              "host": ["{{base_url}}"],
+              "path": ["accounts", ":id", "disable"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "account-id-here"
+                }
+              ]
+            },
+            "description": "Disables an account from activity"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Activity",
+      "item": [
+        {
+          "name": "Start Activity Engine",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/activity/start",
+              "host": ["{{base_url}}"],
+              "path": ["activity", "start"]
+            },
+            "description": "Starts the automated activity engine"
+          },
+          "response": []
+        },
+        {
+          "name": "Pause Activity Engine",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/activity/pause",
+              "host": ["{{base_url}}"],
+              "path": ["activity", "pause"]
+            },
+            "description": "Pauses the activity engine"
+          },
+          "response": []
+        },
+        {
+          "name": "Resume Activity Engine",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/activity/resume",
+              "host": ["{{base_url}}"],
+              "path": ["activity", "resume"]
+            },
+            "description": "Resumes the paused activity engine"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Engine Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/activity/status",
+              "host": ["{{base_url}}"],
+              "path": ["activity", "status"]
+            },
+            "description": "Gets current status of the activity engine"
+          },
+          "response": []
+        },
+        {
+          "name": "Run Manual Cycle",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/activity/run-cycle",
+              "host": ["{{base_url}}"],
+              "path": ["activity", "run-cycle"]
+            },
+            "description": "Manually triggers a single activity cycle"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "item": [
+        {
+          "name": "Get Reputation Growth",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/analytics/reputation-growth",
+              "host": ["{{base_url}}"],
+              "path": ["analytics", "reputation-growth"]
+            },
+            "description": "Retrieves reputation growth data for all accounts"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Activity Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/analytics/activity-statistics",
+              "host": ["{{base_url}}"],
+              "path": ["analytics", "activity-statistics"]
+            },
+            "description": "Retrieves comprehensive activity statistics"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Interaction Trends",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/analytics/interaction-trends?days=7",
+              "host": ["{{base_url}}"],
+              "path": ["analytics", "interaction-trends"],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "7",
+                  "description": "Number of days to retrieve trends for"
+                }
+              ]
+            },
+            "description": "Retrieves interaction trends over specified days"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Daily Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/analytics/daily-statistics?days=7",
+              "host": ["{{base_url}}"],
+              "path": ["analytics", "daily-statistics"],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "7",
+                  "description": "Number of days to retrieve"
+                }
+              ]
+            },
+            "description": "Retrieves daily aggregated statistics"
+          },
+          "response": []
+        },
+        {
+          "name": "Get System Analytics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/analytics/system",
+              "host": ["{{base_url}}"],
+              "path": ["analytics", "system"]
+            },
+            "description": "Retrieves overall system analytics and metrics"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Logs",
+      "item": [
+        {
+          "name": "Get Email Logs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/logs?limit=50&offset=0",
+              "host": ["{{base_url}}"],
+              "path": ["logs"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of logs to retrieve"
+                },
+                {
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Offset for pagination"
+                },
+                {
+                  "key": "account_id",
+                  "value": "",
+                  "description": "Optional: Filter by account ID",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Retrieves email interaction logs"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Daily Activity",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/logs/daily-activity?date=2026-05-11",
+              "host": ["{{base_url}}"],
+              "path": ["logs", "daily-activity"],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "2026-05-11",
+                  "description": "Date in YYYY-MM-DD format"
+                }
+              ]
+            },
+            "description": "Retrieves activity logs for a specific date"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Engagement History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/logs/engagement-history?account_id=&limit=50",
+              "host": ["{{base_url}}"],
+              "path": ["logs", "engagement-history"],
+              "query": [
+                {
+                  "key": "account_id",
+                  "value": "",
+                  "description": "Account ID (required)"
+                },
+                {
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of records to retrieve"
+                }
+              ]
+            },
+            "description": "Retrieves engagement history for a specific account"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Activity Logs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/logs/activity-logs?limit=100",
+              "host": ["{{base_url}}"],
+              "path": ["logs", "activity-logs"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "100",
+                  "description": "Number of logs to retrieve"
+                },
+                {
+                  "key": "account_id",
+                  "value": "",
+                  "description": "Optional: Filter by account ID",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Retrieves system activity logs"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Interaction Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/logs/interaction/:id",
+              "host": ["{{base_url}}"],
+              "path": ["logs", "interaction", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "interaction-id-here"
+                }
+              ]
+            },
+            "description": "Retrieves detailed information about a specific interaction including conversation thread"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        },
+        "description": "Health check endpoint"
+      },
+      "response": []
+    }
+  ]
+}

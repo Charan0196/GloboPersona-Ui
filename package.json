@@ -1,0 +1,33 @@
+{
+  "name": "email-engagement-system",
+  "version": "1.0.0",
+  "description": "Automated Email Engagement & Activity Distribution System",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "migrate": "node src/database/migrate.js",
+    "seed": "node src/database/seed.js",
+    "setup": "npm run migrate && npm run seed",
+    "reset": "rm -f database.sqlite && npm run setup"
+  },
+  "keywords": [
+    "email",
+    "automation",
+    "engagement",
+    "backend"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0",
+    "node-cron": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
