@@ -2,6 +2,12 @@
 
 A modern, clean, and highly usable redesign of the Globopersona email marketing and automation platform built with Next.js 14, TypeScript, and Tailwind CSS.
 
+## 🚀 Live Demo
+
+**Deployed Application**: [https://globopersona-ui-six.vercel.app](https://globopersona-ui-six.vercel.app)
+
+**GitHub Repository**: [https://github.com/Charan0196/GloboPersona-Ui](https://github.com/Charan0196/GloboPersona-Ui)
+
 ## 🎯 Project Overview
 
 This project is a frontend UI redesign assessment that transforms the existing Globopersona interface into a modern, professional, and user-friendly application. The redesign focuses on:
